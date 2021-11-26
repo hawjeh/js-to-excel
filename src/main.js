@@ -24,7 +24,7 @@ const initWorkSheet = (wb, sheetName) => {
 
 const htmlToSheet = (wb, table, options) => {
     let ws = initWorkSheet(wb, options.sheet.name);
-    ws = ParseTableToExcel(ws, table);
+    ParseTableToExcel(ws, table);
     return wb;
 }
 
@@ -32,7 +32,7 @@ const jsonToSheet = (wb, json, options) => {
     let ws = initWorkSheet(wb, options.sheet.name);
     const parsedJson = typeof json === 'string' ? JSON.parse(json) : json;
     parsedJson.options = { ...defaultOptions, ...parsedJson.options };
-    ws = ParseJsonToExcel(ws, parsedJson);
+    ParseJsonToExcel(ws, parsedJson);
     return wb;
 }
 
