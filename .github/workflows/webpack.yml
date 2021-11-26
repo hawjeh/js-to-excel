@@ -1,4 +1,4 @@
-name: NodeJS with Webpack
+name: hawjeh/js-to-excel Build
 
 on:
   push:
