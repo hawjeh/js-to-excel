@@ -61,13 +61,13 @@ const ParseJsonToExcel = (ws, json) => {
                 left: { style: 'thin' },
                 bottom: { style: 'thin' },
                 right: { style: 'thin' }
-            }
+            };
 
             options.headerStyles.border = style.border;
             options.rowStyles = options.rowStyles.map(x => {
                 x.style.border = style.border;
                 return x;
-            })
+            });
         }
 
         const showHeader = options.showHeader || false;
