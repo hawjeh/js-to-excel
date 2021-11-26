@@ -6,7 +6,6 @@ import ExcelJS from 'exceljs';
 const defaultOptions = {
     name: "export.xlsx",
     saveLocal: false,
-    autoStyle: false,
     sheet: {
         name: "Sheet 1"
     }
@@ -22,18 +21,15 @@ const initWorkSheet = (wb, sheetName) => {
     return ws;
 }
 
-const htmlToSheet = (wb, table, options) => {
+const buildSheet = (isTable, wb, obj, options) => {
     let ws = initWorkSheet(wb, options.sheet.name);
-    ParseTableToExcel(ws, table);
-    return wb;
-}
-
-const jsonToSheet = (wb, json, options) => {
-    let ws = initWorkSheet(wb, options.sheet.name);
-    const parsedJson = typeof json === 'string' ? JSON.parse(json) : json;
-    parsedJson.options = { ...defaultOptions, ...parsedJson.options };
-    ParseJsonToExcel(ws, parsedJson);
-    return wb;
+    if (isTable) {
+        ws = ParseTableToExcel(ws, table);
+    } else {
+        const parsedJson = typeof json === 'string' ? JSON.parse(json) : json;
+        parsedJson.options = { ...defaultOptions, ...parsedJson.options };
+        ws = ParseJsonToExcel(ws, parsedJson);
+    }
 }
 
 const save = (wb, fileName, saveLocal) => {
@@ -49,18 +45,19 @@ const save = (wb, fileName, saveLocal) => {
     }
 }
 
-const exportHtmlToExcel = (table, newOptions = {}) => {
+const exportExcel = (isTable, obj, newOptions = {}) => {
     const options = { ...defaultOptions, ...newOptions };
     let wb = initWorkbook();
-    wb = htmlToSheet(wb, table, options);
+    buildSheet(isTable, wb, obj, options);
     save(wb, options.name, options.saveLocal);
 }
 
+const exportHtmlToExcel = (table, newOptions = {}) => {
+    exportExcel(true, table, newOptions);
+}
+
 const exportJsonToExcel = (json, newOptions = {}) => {
-    const options = { ...defaultOptions, ...newOptions };
-    let wb = initWorkbook();
-    wb = jsonToSheet(wb, json, options);
-    save(wb, options.name, options.saveLocal);
+    exportExcel(false, json, newOptions);
 }
 
 export {
