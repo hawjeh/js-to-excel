@@ -1,0 +1,84 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="table-responsive">
+            <table 
+                id="table1" 
+                class="table table-bordered" 
+                data-header="true" 
+                data-bordered="false"
+                data-f-name="Calibri"
+                data-f-size="11"
+                data-f-color="FF000000"
+                data-f-bold="false"
+                data-f-italic="false"
+                data-f-strike="false"
+                data-f-underline="false">
+                <thead data-f-bold="true" data-a-vert="middle" data-f-color="FFFF0000">
+                    <tr>
+                        <th>Header is</th>
+                        <th>Bold</th>
+                        <th>Align Vert Middle</th>
+                        <th>Red Color</th>
+                        <th data-ex="true">Excluded</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-f-size="14">Size 14</td>
+                        <td data-f-bold="true">Bold</td>
+                        <td data-f-italic="true">Italic</td>
+                        <td data-f-strike="true">Strick Through</td>
+                        <td data-ex="true">Excluded Value</td>
+                    </tr>
+                    <tr>
+                        <td data-a-hori="center">Horizontal Center</td>
+                        <td data-a-vert="bottom">Vertical Bottom</td>
+                        <td data-a-wrap="true">Wrap Text</td>
+                        <td data-a-indt="10">Indent 10</td>
+                        <td data-ex="true">Excluded Value</td>
+                    </tr>
+                    <tr>
+                        <td data-a-rtl="true">Right to left</td>
+                        <td data-a-stf="true">Shrink to fit</td>
+                        <td data-a-rota="vertical">Vertical Rotate</td>
+                        <td data-type="n" data-fmt="0.00">12345</td>
+                        <td data-ex="true">Excluded Value</td>
+                    </tr>
+                    <tr>
+                        <td data-type="n">2500</td>
+                        <td data-type="d">05-23-2018</td>
+                        <td data-type="b">true</td>
+                        <td data-type="https://google.com">Google</td>
+                        <td data-ex="true">Excluded Value</td>
+                    </tr>
+                    <tr>
+                        <td data-b-side-all="">Bordered</td>
+                        <td data-b-side-left="" data-b-side-right="" data-b-style="dotted">Dotted left and right</td>
+                        <td data-b-side-top="" data-b-style-color="FFFF0000">Top Red Only</td>
+                        <td data-b-side-bottom="" data-b-style="double">Bottom Double</td>
+                        <td data-ex="true">Excluded Value</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <button type="button" class="btn btn-secondary" onclick="export_table()">Export</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./JsToExcel.min.js"></script>
+    <script>
+        function export_table() {
+            JsToExcel.exportHtmlToExcel(document.getElementById('table1'));
+        }
+    </script>
+</body>
+
+</html>
