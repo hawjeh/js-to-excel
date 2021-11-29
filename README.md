@@ -5,6 +5,14 @@
 A javascript tool to export HTML table / JSON to valid excel file effortlessly.
 This library uses [exceljs/exceljs](https://github.com/exceljs/exceljs) under the hood to create the excel.
 
+## Sample Table
+
+[Visit here](https://hawjeh.com/js-to-excel)
+
+or
+
+Checkout the sample project in the repo
+
 ## Installation / Usage
 
 ### Browser
