@@ -19,8 +19,8 @@ Checkout the sample project in the repo
 
 Just add a script tag:
 
-```html - build using webpack.config.dev.js
-<script type="text/javascript" src="./dist/JsToExcel.js"></script>
+```html
+<script type="text/javascript" src="./dist/JsToExcel.html.js"></script>
 <script>
     const { exportHtmlToExcel } = window.JsToExcel;
     function init() {

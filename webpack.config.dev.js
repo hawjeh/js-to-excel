@@ -8,7 +8,7 @@ export default {
     entry: ["babel-polyfill", "./src/main.js"],
     output: {
         path: path.resolve(__dirname, "dist"),
-        filename: "JsToExcel.js",
+        filename: "JsToExcel.html.js",
         library: 'JsToExcel',
         libraryTarget: "window"
     },
