@@ -19,7 +19,7 @@ Checkout the sample project in the repo
 
 Just add a script tag:
 
-```html
+```html - build using webpack.config.dev.js
 <script type="text/javascript" src="./dist/JsToExcel.js"></script>
 <script>
     const { exportHtmlToExcel } = window.JsToExcel;
@@ -44,8 +44,7 @@ Just add a script tag:
 ```bash
 npm install @hawjeh/js-to-excel --save
 
-import "@hawjeh/js-to-excel";
-const { exportHtmlToExcel, exportJsonToExcel } = window.JsToExcel;
+import { exportHtmlToExcel, exportJsonToExcel } from "@hawjeh/js-to-excel";
 
 const onExportHtmlClick = () => {
     const table = window.document.getElementById('entry-table');

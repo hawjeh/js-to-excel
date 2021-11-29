@@ -1,6 +1,6 @@
 {
   "name": "@hawjeh/js-to-excel",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Javascript library to create excel file from html table / json objects with styles",
   "main": "dist/JsToExcel.js",
   "type": "module",

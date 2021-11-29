@@ -9,8 +9,9 @@ export default {
     output: {
         path: path.resolve(__dirname, "dist"),
         filename: "JsToExcel.js",
-        library: 'JsToExcel',
-        libraryTarget: "window"
+        library: {
+            type: "module"
+        }
     },
     plugins: [
         new webpack.optimize.LimitChunkCountPlugin({
