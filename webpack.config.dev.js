@@ -3,13 +3,14 @@ import path from "path";
 const __dirname = path.resolve();
 
 export default {
-    mode: "production",
+    target: "web",
+    mode: "development",
     entry: ["babel-polyfill", "./src/main.js"],
     output: {
-        filename: "JsToExcel.min.js",
         path: path.resolve(__dirname, "dist"),
+        filename: "JsToExcel.js",
         library: 'JsToExcel',
-        libraryTarget: "var"
+        libraryTarget: "window"
     },
     plugins: [
         new webpack.optimize.LimitChunkCountPlugin({

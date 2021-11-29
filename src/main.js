@@ -24,9 +24,9 @@ const initWorkSheet = (wb, sheetName) => {
 const buildSheet = (isTable, wb, obj, options) => {
     let ws = initWorkSheet(wb, options.sheet.name);
     if (isTable) {
-        ws = ParseTableToExcel(ws, table);
+        ws = ParseTableToExcel(ws, obj);
     } else {
-        const parsedJson = typeof json === 'string' ? JSON.parse(json) : json;
+        const parsedJson = typeof obj === 'string' ? JSON.parse(obj) : obj;
         parsedJson.options = { ...defaultOptions, ...parsedJson.options };
         ws = ParseJsonToExcel(ws, parsedJson);
     }

@@ -1,8 +1,8 @@
 {
   "name": "@hawjeh/js-to-excel",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "description": "Javascript library to create excel file from html table / json objects with styles",
-  "main": "./dist/JsToExcel.js",
+  "main": "dist/JsToExcel.js",
   "type": "module",
   "repository": {
     "type": "git",
@@ -14,9 +14,9 @@
   "homepage": "https://github.com/hawjeh/table-to-excel#readme",
   "scripts": {
     "start:test": "nodemon ./src/test/index.js",
-    "start:code": "webpack --watch",
-    "start": "concurrently --kill-others \"nodemon ./src/test/index.js\" \"webpack --watch\"",
-    "build": "webpack"
+    "start:code": "webpack --config=webpack.config.dev.js --watch",
+    "start": "concurrently --kill-others \"nodemon ./src/test/index.js\" \"webpack --config=webpack.config.dev.js --watch\"",
+    "build": "webpack --config=webpack.config.prod.js"
   },
   "keywords": [
     "html table to excel",
